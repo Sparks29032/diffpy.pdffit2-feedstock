@@ -12,7 +12,7 @@ source:
 build:
   # we need egg_dir to avoid overlapping diffpy/__init__.py files.
   preserve_egg_dir: true
-  number: 8
+  number: 9
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -41,8 +41,10 @@ test:
     - diffpy.pdffit2.tests
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest --pyargs diffpy.pdffit2
 
 about:
   home: https://github.com/diffpy/diffpy.pdffit2
